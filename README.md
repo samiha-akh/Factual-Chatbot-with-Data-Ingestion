@@ -69,4 +69,7 @@ These files support efficient document-based question answering and make the cha
 ## Installation & Setup (Colab-ready)
 
 This is meant to be run in **Google Colab**, but can be adapted elsewhere with an appropriate GPU and Python environment.
-P.S.: After all the installations, the Colab kernel needs to be restarted (don't worry when you see the error), the installation commands commented out, and the notebook rerun. 
+
+> **P.S.: After all the installations, you must restart the Colab kernel.**  
+> Don’t worry if you see an error after restarting the kernel — just **comment out the installation lines**, and rerun the notebook.
+
