@@ -51,6 +51,22 @@ This project implements a complete pipeline that ingests a research document (PD
 ### 7. Interactive Demo / Query Loop
 - Provides a prompt-based loop for testing: type arbitrary questions and see which canonical question is matched, the answer, context snippet, and confidence scores.
 
+### 8. Output Files and Their Purpose
+
+Running this project will generate the following files:
+
+| Filename                     | Description |
+|-----------------------------|-------------|
+| `raw_data.json`             | Contains the cleaned and normalized raw text extracted from the uploaded document. This includes removal of headers, footers, hyphenations, inconsistent quotes, and extra whitespace. |
+| `processed_data.json`       | A sentence-level breakdown of the document. Each sentence is tagged with its paragraph ID and sentence ID. This structured format is used to generate question–answer pairs. |
+| `qa_with_generated_questions.json` | The final list of generated QA pairs. Each entry includes a question, answer (fact), context (surrounding text), and a reference to its source. This serves as the core factual knowledge base for the chatbot. |
+| `faiss_question.index`      | The FAISS vector index of question embeddings. It enables fast and efficient semantic similarity search between user queries and stored questions. |
+| `qa_store.pkl`              | A serialized Python object storing metadata, including the list of QA pairs and the embedding model used. This allows reloading the chatbot without reprocessing the document. |
+
+These files support efficient document-based question answering and make the chatbot persistent across sessions.
+
+
 ## Installation & Setup (Colab-ready)
 
 This is meant to be run in **Google Colab**, but can be adapted elsewhere with an appropriate GPU and Python environment.
+P.S.: After all the installations, the Colab kernel needs to be restarted (don't worry when you see the error), the installation commands commented out, and the notebook rerun. 
