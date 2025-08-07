@@ -30,7 +30,7 @@ This project implements a complete pipeline that ingests a research document (PD
 
 ### 3. Hybrid Fact & Question Generation
 - Chunks nearby sentences to create local context windows.
-- Summarizes each chunk into a concise “fact” using a summarization model.
+- Summarizes each chunk into a concise “fact” using a summarization model(`facebook/bart-large-cnn`).
 - Generates a natural question for each fact using a question-generation model (`valhalla/t5-base-qg-hl`), overwriting the original placeholder question.
 
 ### 4. Paraphrase Augmentation 
