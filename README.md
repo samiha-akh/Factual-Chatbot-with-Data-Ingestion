@@ -1,4 +1,4 @@
-# Factual-Chatbot-with-Data-Ingestion
+# RAG-based Factual Chatbot with Data Ingestion
 
 
 ## Overview
